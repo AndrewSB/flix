@@ -7,7 +7,7 @@ if [ $1 ]
 	RESPONSE=`curl -H GET $URL`
 	MAGNET=`echo $RESPONSE | jq '.[0].magnet'`
 	RETURN=`echo $MAGNET | tr -d '"'`
-	echo $RETURN
+	peerflix $RETURN
 else
 	echo "flix - A simple convience search for peerflix"
 	echo ""
