@@ -6,7 +6,8 @@ if [ $1 ]
 	echo $SANITIZED
 	URL="http://fenopy.se/module/search/api.php?format=json&keyword="$SANITIZED
 	RESPONSE=`curl -H GET $URL`
-
+	MAGNET=`echo $RESPONSE | jq '.[0].magnet'`
+	echo $MAGNET
 else
 	echo "flix - A simple convience search for peerflix"
 	echo ""
